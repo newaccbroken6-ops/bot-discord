@@ -1,0 +1,16 @@
+services:
+  - type: worker
+    name: freefire-bot
+    env: python
+    region: frankfurt
+    plan: starter
+    runtime: python3.11
+    buildCommand: |
+      python -m pip install --upgrade pip && 
+      pip install -r requirements.txt
+    startCommand: python bot.py
+    envVars:
+      - key: DISCORD_BOT_TOKEN
+        sync: false
+      - key: API_BASE_URL
+        sync: false
