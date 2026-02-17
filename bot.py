@@ -1,26 +1,14 @@
 import discord
 from discord.ext import commands
 import requests
-import os
-from dotenv import load_dotenv
 
-# Load environment variables from .env file
-load_dotenv()
-
-# Bot configuration - Using environment variables
-TOKEN = os.getenv('DISCORD_BOT_TOKEN')
-API_BASE_URL = os.getenv('API_BASE_URL', 'https://long-bio-dusky.vercel.app/')
+# Bot configuration - Direct token in code (NOT RECOMMENDED FOR PRODUCTION)
+TOKEN = 'MTQ3MzI3Nzg2MzIyOTkxNTI1Ng.GMpRI2.bgGG2m4WVzxKlELnqj2wehT_jC_BMgPysTnqTo'  # Replace with your actual token
+API_BASE_URL = 'https://long-bio-dusky.vercel.app/'
 
 print(f"Configuration loaded:")
 print(f"- API Base URL: {API_BASE_URL}")
-
-# Check if token is set
-if not TOKEN:
-    print("ERROR: DISCORD_BOT_TOKEN not found in environment variables!")
-    print("Please add your bot token to the .env file")
-    exit(1)
-else:
-    print("- Bot token loaded successfully")
+print("- Bot token loaded from code (SECURITY RISK - change to env vars later)")
 
 # Initialize bot
 intents = discord.Intents.default()
